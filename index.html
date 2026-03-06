@@ -15,10 +15,31 @@
   <header class="header">
     <div class="header-top-bar"></div>
     <div class="header-inner">
-      <div class="avatar-wrap">
-        <div class="avatar"><img src="img/alena-porokh-content.png" alt="Alena Porokh" /></div>
+      <div class="avatar-wrap" id="avatar-wrap" title="Click to switch photo">
+        <div class="avatar" id="avatar-toggle">
+          <img id="avatar-img" src="avatar.jpg" alt="Alena Porokh" />
+        </div>
         <div class="status-dot" title="Open to work"></div>
+        <div class="avatar-switch-hint">⟳</div>
       </div>
+      <script>
+        (function() {
+          var photos = [
+            "avatar.jpg",
+            "avatar.jpg"
+          ];
+          var current = 0;
+          document.getElementById('avatar-wrap').addEventListener('click', function() {
+            current = (current + 1) % photos.length;
+            var img = document.getElementById('avatar-img');
+            img.style.opacity = '0';
+            setTimeout(function() {
+              img.src = photos[current];
+              img.style.opacity = '1';
+            }, 180);
+          });
+        })();
+      </script>
       <div class="header-info">
         <h1 class="name">Alena Porokh</h1>
         <p class="username">alena-porokh</p>
@@ -96,7 +117,6 @@
             <span class="skill-tag">AI Tools</span>
             <span class="skill-tag">CapCut Video</span>
             <span class="skill-tag">GitHub / VS Code</span>
-            <span class="skill-tag">Google Toolkit</span>
           </div>
         </div>
       </section>
@@ -104,11 +124,11 @@
       <section class="sidebar-section">
         <div class="sidebar-section-header">Languages</div>
         <div class="sidebar-section-content lang-list">
-          <div class="lang-row"><span class="lang-name">English-C1</span><div class="lang-dots" data-level="5"></div></div>
-          <div class="lang-row"><span class="lang-name">Ukrainian-Native</span><div class="lang-dots" data-level="5"></div></div>
-          <div class="lang-row"><span class="lang-name">Russian-Native</span><div class="lang-dots" data-level="5"></div></div>
-          <div class="lang-row"><span class="lang-name">Polish-B1</span><div class="lang-dots" data-level="4"></div></div>
-          <div class="lang-row"><span class="lang-name">German-A2</span><div class="lang-dots" data-level="2"></div></div>
+          <div class="lang-row"><span class="lang-name">English</span><div class="lang-dots" data-level="5"></div></div>
+          <div class="lang-row"><span class="lang-name">Ukrainian</span><div class="lang-dots" data-level="5"></div></div>
+          <div class="lang-row"><span class="lang-name">Russian</span><div class="lang-dots" data-level="5"></div></div>
+          <div class="lang-row"><span class="lang-name">Polish</span><div class="lang-dots" data-level="4"></div></div>
+          <div class="lang-row"><span class="lang-name">German</span><div class="lang-dots" data-level="2"></div></div>
         </div>
       </section>
 
@@ -116,11 +136,11 @@
         <div class="sidebar-section-header">Impact</div>
         <div class="stat-grid">
           <div class="stat-cell">
-            <div class="num" data-target="37.6" data-suffix="%">37,6%</div>
+            <div class="num" data-target="37.6" data-suffix="%">0%</div>
             <div class="label">Engagement Rate</div>
           </div>
           <div class="stat-cell">
-            <div class="num" data-target="76" data-suffix="%">76%</div>
+            <div class="num" data-target="76" data-suffix="%">0%</div>
             <div class="label">Traffic Growth</div>
           </div>
           <div class="stat-cell">
@@ -148,10 +168,7 @@
         <div class="card-body">
           <h2 class="section-heading">👋 About Me</h2>
           <p class="summary-text">
-            I am a versatile content professional with over five years of experience in the IT industry. I am passionate about
-            creating content that engages audiences, strengthens brand presence, and builds lasting loyalty. My expertise includes
-            in-depth research, SEO optimization, and developing visually compelling blog posts and infographics. As a collaborative
-            and dependable team player, I consistently contribute to shared goals and support the overall success of the team.
+            I am a versatile content professional with over five years of experience in IT. My passion is creating content that engages audiences and builds brand loyalty. I specialize in in-depth research, SEO optimization, and producing visually appealing blog posts and infographics. As a team player, I'm a reliable colleague who consistently contributes to the team's success.
           </p>
         </div>
       </article>
